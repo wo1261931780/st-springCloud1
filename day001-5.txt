@@ -1,16 +1,4 @@
-package wo1261931780.stspringCloud.service;
-
-/**
- * Created by Intellij IDEA.
- * Project:st-springCloud
- * Package:wo1261931780.stspringCloud.service
- *
- * @author liujiajun_junw
- * @Date 2023-03-15-04  星期二
- * @description
- */
-public class DemoService {
-	//分布式带来的好处是降低了项目的耦合度
+//分布式带来的好处是降低了项目的耦合度
 	//分布式带来的坏处是增加了项目的复杂度
 	//同时，以为做了服务的拆分，所以部署和后期维护的时候更加复杂
 	//同时，因为做了拆分，为了保证高可用，也必须要做负载均衡和集群
@@ -39,5 +27,3 @@ public class DemoService {
 	//然后实现了自己的配置中心,注册中心
 	//我们使用springCloud,其实就是因为内部的springBoot整合了一堆开源组件
 	//从而达到了开箱即用的效果
-	
-}

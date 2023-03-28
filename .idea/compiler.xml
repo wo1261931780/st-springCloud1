@@ -2,17 +2,35 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="st-springCloud" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-server" target="1.8" />
+      <module name="feign-api" target="1.8" />
+      <module name="foreignApi" target="17" />
+      <module name="gateway" target="1.8" />
+      <module name="order-service" target="1.8" />
+      <module name="orderService" target="17" />
+      <module name="user-service" target="1.8" />
+      <module name="userService" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="st-springCloud" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="feign-api" options="-parameters" />
+      <module name="foreignApi" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="order-service" options="-parameters" />
+      <module name="orderService" options="-parameters" />
+      <module name="st-springCloud" options="" />
+      <module name="user-service" options="-parameters" />
+      <module name="userService" options="-parameters" />
     </option>
   </component>
 </project>
