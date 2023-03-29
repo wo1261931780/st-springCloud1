@@ -19,7 +19,10 @@ public class OrderService {
 	
 	public Order queryById(Long orderId) {
 		Order orderMapperById = orderMapper.findById(orderId);
-		String getUrl = "http://localhost:8081/user/" + orderMapperById.getUserId();
+		//String getUrl = "http://localhost:8081/user/" + orderMapperById.getUserId();
+		//上面还是硬编码
+		//我们建议使用的是配置文件中的服务名
+		String getUrl = "http://orderServer/user/" + orderMapperById.getUserId();
 		User forObject = restTemplate.getForObject(getUrl, User.class);
 		//如果不指定对象的类型，name默认得到的是一个json字符串
 		//这里指定了以后，我们就可以得到需要的结果，然后进一步合并

@@ -31,9 +31,10 @@ eureka:
     service-url: # eureka的地址信息
       defaultZone: http://127.0.0.1:10086/eureka
 #========================================================
-#userService:
-#  ribbon:
-#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule  # 负载均衡规则
+#注意这里是order服务中配置user的调用规则
+userService:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule  # 负载均衡规则
 #ribbon:
 #  eager-load:
 #    enabled: true # 开启饥饿加载
