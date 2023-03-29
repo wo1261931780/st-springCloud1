@@ -14,6 +14,11 @@ public class OrderServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OrderServiceApplication.class, args);
 	}
+	//一个服务，既可以是提供者，也可以是消费者
+	//如果是消费者，就需要调用其他服务的接口
+	//如果是提供者，就需要暴露接口
+	//消费者和提供者都是相对的概念
+	
 	
 	/**
 	 * 创建RestTemplate并注入Spring容器
@@ -25,6 +30,8 @@ public class OrderServiceApplication {
 	@Bean
 	@LoadBalanced
 	public RestTemplate restTemplate() {
+		//这个就是模拟前端，发送http请求的工具类
+		//使用这个工具类，来调用其他服务的接口
 		return new RestTemplate();
 	}
 	
