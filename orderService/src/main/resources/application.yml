@@ -35,11 +35,14 @@ eureka:
 userService:
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule  # 负载均衡规则
-#ribbon:
-#  eager-load:
-#    enabled: true # 开启饥饿加载
-#    clients: # 指定饥饿加载的服务名称
-#      - userService
+#========================================================
+#下面是懒加载的配置过程
+ribbon:
+  eager-load:
+    enabled: true # 开启饥饿加载
+    clients: # 指定饥饿加载的服务名称。项目第一次启动的时候加载，后面速度提高
+      - userService
+#========================================================
 feign:
   httpclient:
     enabled: true # 支持HttpClient的开关
