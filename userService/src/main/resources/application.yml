@@ -6,6 +6,8 @@ spring:
     username: root
     password: LIU18959297292
     driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: userServer  # 服务名称，在euraka中展示
 #  shardingsphere:
 #    sharding:
 #      default-database-strategy:
@@ -21,9 +23,13 @@ spring:
 #    cn.itcast: debug
 #  pattern:
 #    dateformat: MM-dd HH:mm:ss:SSS
-##eureka:
-##  client:
-##    service-url:  # eureka的地址信息
-##      defaultZone: http://127.0.0.1:10086/eureka
-pattern:
-  name: 本地环境local
+#========================================================
+#要将服务注册到eureka上，需要在application.yml中添加以下内容：
+#注册之前，需要在pom中引入客户端依赖
+eureka:
+  client:
+    service-url: # eureka的地址信息
+      defaultZone: http://127.0.0.1:10086/eureka
+#========================================================
+#pattern:
+#  name: 本地环境local
