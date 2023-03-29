@@ -11,14 +11,8 @@ VorderService/src/test/java/wo1261931780/orderService/OrderServiceApplicationTes
 SuserService/src/test/java/wo1261931780/userService/UserServiceApplicationTests.java,b\2\b2a761d3e375a2b9379d77bb144e749bb098cccb
 y
 IuserService/src/main/java/wo1261931780/userService/mapper/UserMapper.java,0\4\04c7d88e595fdb43c0179e0da110e567f68882b4
-<
-day001-5.txt,e\0\e0cae065e43a54d18adf675129a89998d1785680
 †
 VeurekaServer/src/test/java/wo1261931780/eurekaServer/EurekaServerApplicationTests.java,6\5\65a32f8272a6d4d7b49ee6e1cbe2333277ef9765
-„
-TeurekaServer/src/main/java/wo1261931780/eurekaServer/a20230329/A20230329Note001.java,7\3\73a870f3bd878dbb45d4ba26e80b81e19fda9678
-„
-TeurekaServer/src/main/java/wo1261931780/eurekaServer/a20230328/A20230328Note001.java,e\c\ec2464213f262724069a45d3f97745234c9cdb0f
 _
 /eurekaServer/src/main/resources/application.yml,3\9\39e46d1f5b81d63affaf38ee0bc992414b4fc0de
 {
@@ -33,8 +27,6 @@ E
 orderService/mvnw.cmd,6\8\68588c2b4a67e4763f550dc6e900ec93d298a3d8
 D
 eurekaServer/pom.xml,5\2\52d546130d2015352d77f9b2af75e0de9ef55c31
-C
-userService/pom.xml,a\3\a3d684f21f20f799f3afff76fcfb3d8ad24a181b
 ~
 NuserService/src/main/java/wo1261931780/userService/UserServiceApplication.java,8\c\8cb9359916f8d40c8a4562e8b76755a6b24178ee
 |
@@ -47,7 +39,3 @@ DorderService/src/main/java/wo1261931780/orderService/pojo/Order.java,8\9\890c9
 NorderService/src/main/java/wo1261931780/orderService/service/OrderService.java,4\2\42f39f50b1f8c634bc2c3cfdefe291422315b58f
 
 QorderService/src/main/java/wo1261931780/orderService/OrderServiceApplication.java,f\6\f6eb7ab16b601204f0879a9e891e410d41890103
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-D
-orderService/pom.xml,4\4\441829f1925798b4de2780ab75d6961d1771e6b1
