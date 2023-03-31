@@ -11,9 +11,7 @@ public class FeignApiApplication {
 	// 这里实际上是为了解决依赖注入的问题，
 	// 因为feignClient是在feignApi中定义的，而feignApi是被其他项目依赖的，所以需要指定扫描的包
 
-
 	public static void main(String[] args) {
 		SpringApplication.run(FeignApiApplication.class, args);
 	}
-
 }
