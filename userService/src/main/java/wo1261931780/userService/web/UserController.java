@@ -1,39 +1,66 @@
+/*
+ * Author: junw 45444154+wo1261931780@users.noreply.github.com
+ * Date: 2023-03-29 00:03:49
+ * LastEditors: junw 45444154+wo1261931780@users.noreply.github.com
+ * LastEditTime: 2023-03-31 16:34:31
+ * FilePath: \st-springCloud\userService\src\main\java\wo1261931780\userService\web\UserController.java
+ * Description: 1111
+ *
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
+ */
 package wo1261931780.userService.web;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import wo1261931780.userService.config.PatternProperties;
 import wo1261931780.userService.pojo.User;
 import wo1261931780.userService.service.UserService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 @Slf4j
 @RestController
 @RequestMapping("/user")
-// @RefreshScope
+@RefreshScope
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    // @Value("${pattern.dateformat}")
-    // private String dateformat;
 
-    //@Autowired
-    //private PatternProperties properties;
-    //
-    //@GetMapping("prop")
-    //public PatternProperties properties(){
-    //    return properties;
-    //}
-    //
-    //@GetMapping("now")
-    //public String now(){
-    //    return LocalDateTime.now().format(DateTimeFormatter.ofPattern(properties.getDateformat()));
-    //}
+    // 这里是用来读取配置文件的，判断能否生效
+    @Value("${pattern.dateformat}")
+    private String dateformat;
 
+    @GetMapping("now")
+    public String now(){
+       return LocalDateTime.now().format(DateTimeFormatter.ofPattern(dateformat,Locale.CHINA));
+    }
+    // 目前上面还没有实现热更新，
+    // 添加了RefreshScope注解，就可以实现
+    //========================================================
+    // 下面就是通过注入实现的
+    @Autowired
+    private PatternProperties properties;
+
+    @GetMapping("prop")
+    public PatternProperties properties(){
+       return properties.getDateformat();
+    }
+//========================================================
+// 在nacos中，有多环境共享配置和环境特殊配置，共享配置是所有环境都可以使用的，环境特殊配置是只有当前环境可以使用的。
+// 一般会先读取userServer-dev.properties，然后再读取userServer.properties，如果有相同的配置，那么后面的会覆盖前面的。
+// 我们在userServer-dev.properties中添加公共配置，然后在userServer.properties中添加环境特殊配置
+// 就可以避免重复开发
+    @GetMapping("prop2")
+    public PatternProperties properties(){
+        // 从这里就可以看到所有变量按照json格式输出
+       return properties;
+    }
     /**
      * 路径： /user/110
      *
