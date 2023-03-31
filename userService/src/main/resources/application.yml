@@ -10,13 +10,23 @@ spring:
     name: userServer  # 服务名称，在euraka中展示
   cloud:
     nacos:
-      server-addr: localhost:8848 # nacos服务地址
+      server-addr: 192.168.3.145:8848 # nacos服务地址
+      discovery:
+        cluster-name: FJ # nacos集群名称
+#      config:
+#        import=nacos: 192.168.3.145:8848
+#          nacos: application.yml # nacos配置中心地址
+#        import-check:
+#          enabled: false # 是否开启配置中心检查
+#        group: DEFAULT_GROUP # nacos配置中心组
+#        file-extension: yml # nacos配置中心文件类型
+#        namespace: dev # nacos配置中心命名空间
+#========================================================
 #  shardingsphere:
 #    sharding:
 #      default-database-strategy:
 #      tables:
-#      discovery:
-#        cluster-name: HZ
+#========================================================
 #mybatis:
 #  type-aliases-package: wo1261931780.userService.user.pojo
 #  configuration:

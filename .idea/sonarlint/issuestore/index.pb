@@ -23,10 +23,6 @@ PuserService/src/main/java/wo1261931780/userService/config/PatternProperties.jav
 QeurekaServer/src/main/java/wo1261931780/eurekaServer/EurekaServerApplication.java,e\9\e9fbe176cf633ae6a0eef98917bdec4861db0ac9
 z
 JuserService/src/main/java/wo1261931780/userService/web/UserController.java,a\9\a9aebf747e7af079825d6ffa08279e950d165a55
-E
-orderService/mvnw.cmd,6\8\68588c2b4a67e4763f550dc6e900ec93d298a3d8
-D
-eurekaServer/pom.xml,5\2\52d546130d2015352d77f9b2af75e0de9ef55c31
 ~
 NuserService/src/main/java/wo1261931780/userService/UserServiceApplication.java,8\c\8cb9359916f8d40c8a4562e8b76755a6b24178ee
 |
@@ -43,9 +39,3 @@ QorderService/src/main/java/wo1261931780/orderService/OrderServiceApplication.ja
 TeurekaServer/src/main/java/wo1261931780/eurekaServer/a20230328/A20230328Note001.java,e\c\ec2464213f262724069a45d3f97745234c9cdb0f
 „
 TeurekaServer/src/main/java/wo1261931780/eurekaServer/a20230329/A20230329Note001.java,7\3\73a870f3bd878dbb45d4ba26e80b81e19fda9678
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-D
-orderService/pom.xml,4\4\441829f1925798b4de2780ab75d6961d1771e6b1
-C
-userService/pom.xml,a\3\a3d684f21f20f799f3afff76fcfb3d8ad24a181b
