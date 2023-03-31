@@ -1,8 +1,0 @@
-
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(®‹­‡şÿÿÿÿ8¨ãÇò0
-J
-java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8¸Ò¦âò0
-}
-java:S1128"`Remove this unused import 'org.springframework.boot.context.properties.ConfigurationProperties'.(¦Õ¸Ç8¹Ò¦âò0
-g
-java:S1128"ERemove this unused import 'org.springframework.stereotype.Component'.(Ş÷Ñ¸ÿÿÿÿÿ8¹Ò¦âò0
