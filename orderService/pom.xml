@@ -80,6 +80,11 @@
             <artifactId>userService</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>wo1261931780</groupId>
+            <artifactId>feignApi</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

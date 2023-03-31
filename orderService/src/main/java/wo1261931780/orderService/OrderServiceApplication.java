@@ -1,3 +1,13 @@
+/*
+ * Author: junw 45444154+wo1261931780@users.noreply.github.com
+ * Date: 2023-03-29 09:23:57
+ * LastEditors: junw 45444154+wo1261931780@users.noreply.github.com
+ * LastEditTime: 2023-04-01 01:48:01
+ * FilePath: \st-springCloud\orderService\src\main\java\wo1261931780\orderService\OrderServiceApplication.java
+ * Description: 1111
+ *
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
+ */
 package wo1261931780.orderService;
 
 import com.netflix.loadbalancer.IRule;
@@ -9,7 +19,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(clients = FeignClient.class, defaultConfiguration = FeignClientConfig.class)
 public class OrderServiceApplication {
 
 	public static void main(String[] args) {
