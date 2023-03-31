@@ -9,6 +9,8 @@ public interface UserClient {
     @GetMapping("/user/{id}")
     User findById(@PathVariable("id") Long id);
     // 声明一个远程调用
-
+    // 这里的调用地址，必须和userService中的请求路径一致
+    // feign有可以直接抽取出来，作为一个独立的模块
+    // 好处是避免了在不同的微服务中重复定义client
 
 }

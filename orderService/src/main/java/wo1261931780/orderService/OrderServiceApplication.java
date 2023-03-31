@@ -1,13 +1,3 @@
-/*
- * Author: junw 45444154+wo1261931780@users.noreply.github.com
- * Date: 2023-03-29 09:23:57
- * LastEditors: junw 45444154+wo1261931780@users.noreply.github.com
- * LastEditTime: 2023-03-31 22:19:30
- * FilePath: \st-springCloud\orderService\src\main\java\wo1261931780\orderService\OrderServiceApplication.java
- * Description: 1111
- *
- * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
- */
 package wo1261931780.orderService;
 
 import com.netflix.loadbalancer.IRule;
@@ -55,5 +45,4 @@ public class OrderServiceApplication {
 
 	// EnableFeignClients注解，表示开启Feign的功能
 	// 首先要引入Feign的依赖
-
 }

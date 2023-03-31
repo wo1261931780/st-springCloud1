@@ -37,7 +37,7 @@ spring:
 #注意这里是order服务中配置user的调用规则
 userService:
   ribbon:
-    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule  # 负载均衡规则
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 负载均衡规则
 #========================================================
 #下面是懒加载的配置过程
 ribbon:
@@ -46,8 +46,18 @@ ribbon:
     clients: # 指定饥饿加载的服务名称。项目第一次启动的时候加载，后面速度提高
       - userService
 #========================================================
+# 可以设置多种配置，比如超时时间等
 feign:
   httpclient:
     enabled: true # 支持HttpClient的开关
     max-connections: 200 # 最大连接数
     max-connections-per-route: 50 # 单个路径的最大连接数
+  client:
+    config:
+      default:
+        connectTimeout: 5000 # 连接超时时间
+        readTimeout: 5000 # 读取超时时间
+        loggerLevel:
+          basic # 日志级别
+          # basic，记录请求和响应的基本信息，
+          # headers，记录请求和响应的头信息，full记录请求和响应的头信息和正文全部信息

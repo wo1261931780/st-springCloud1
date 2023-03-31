@@ -1,3 +1,13 @@
+/*
+ * Author: junw 45444154+wo1261931780@users.noreply.github.com
+ * Date: 2023-03-29 09:25:07
+ * LastEditors: junw 45444154+wo1261931780@users.noreply.github.com
+ * LastEditTime: 2023-04-01 00:41:30
+ * FilePath: \st-springCloud\orderService\src\main\java\wo1261931780\orderService\service\OrderService.java
+ * Description: 1111
+ *
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
+ */
 package wo1261931780.orderService.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +47,10 @@ public class OrderService {
 	// 注入Feign的接口
 	public Order queryById2(Long userId) {
 		Order order = orderMapper.findById(userId);
-		order.setUser(userClient.findById(order.getUserId()));
-
+		// 使用Client完成查询操作
+		User demoUser = userClient.findById(order.getUserId());
+		order.setUser(demoUser);
+		return order;
 	}
 
 }

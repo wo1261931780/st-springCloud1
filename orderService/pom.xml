@@ -57,17 +57,19 @@
         <!--			<version>2022.0.0.0-RC1</version>-->
         <!--		</dependency>-->
         <!--feign客户端依赖-->
+        <!-- feign内部已经继承了ribbon，不需要额外引入 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <!--            <version>4.0.1</version>-->
         </dependency>
         <!-- &lt;!&ndash;引入HttpClient依赖&ndash;&gt; -->
-        <!-- <dependency> -->
-        <!--            <groupId>io.github.openfeign</groupId>-->
-        <!--            <artifactId>feign-httpclient</artifactId>-->
-        <!--            <version>12.2</version>-->
-        <!--        </dependency>-->
+        <!-- 因为feign不支持连接池，所以这里手动引入一个 -->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
+            <!--<version>12.2</version>-->
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
