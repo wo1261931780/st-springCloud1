@@ -37,4 +37,21 @@ spring:
         # 同一个类型的过滤器，会按照配置的顺序依次执行。1-2-3这种
         # 浏览器说的跨域问题，是浏览器的安全策略，不是后端的跨域问题
         # 具体而言，是禁止了ajax跨域请求，所以我们需要在后端配置跨域
-        
+      globalcors:
+        add-to-simple-url-handler-mapping: true # 跨域配置
+        cors-configurations:
+          "[/**]": # 配置所有请求
+            allowedOrigins: # 允许跨域的域名，*代表所有域名
+              - "http://localhost:8001"
+              - "http://localhost:8002"
+            allowedMethods: # 允许跨域的请求方法，*代表所有请求方法
+              - "*"
+            allowedHeaders: # 允许跨域的请求头，*代表所有请求头
+            allowCredentials: true # 是否允许携带cookie
+            maxAge: 1800 # 跨域的有效时间，单位为秒
+          # cors:
+          # allowed-origins: "*" # 允许跨域的域名，*代表所有域名
+          # allowed-methods: "*" # 允许跨域的请求方法，*代表所有请求方法
+          # allowed-headers: "*" # 允许跨域的请求头，*代表所有请求头
+          # allow-credentials: true # 是否允许携带cookie
+          # max-age: 1800 # 跨域的有效时间，单位为秒
