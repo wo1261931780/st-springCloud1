@@ -70,6 +70,8 @@ public class UserController {
     @GetMapping("/{id}")
     public User queryById(@PathVariable("id") Long id,
                           @RequestHeader(value = "Truth", required = false) String truth) {
+                            // RequestHeader注解，可以获取请求头中的信息
+                            // required = false，表示可以不传，如果不传，那么就是null
         System.out.println("truth: " + truth);
         return userService.queryById(id);
     }

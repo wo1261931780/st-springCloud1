@@ -14,19 +14,27 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>getway</name>
 	<description>Demo project for Spring Boot</description>
+	<!-- 网关的功能： -->
+	<!-- 请求过来，先判断身份是谁，然后决定展示内容 -->
+	<!-- 根据请求的类型，判断转发到哪个服务 -->
+	<!-- 根据业务量完成限流 -->
+	<!-- 目前有两种类型的网关，我们使用响应式编程的getway -->
 	<properties>
 		<java.version>8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<dependencies>
+		<!-- nacos依赖 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+			<version>2.2.5.RELEASE</version>
 		</dependency>
-
+		<!-- 网关的服务依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-getway</artifactId>
 		</dependency>
 	</dependencies>
 

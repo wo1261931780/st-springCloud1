@@ -1,0 +1,40 @@
+server:
+  port: 10010 # 端口号
+spring:
+  application:
+    name: getwayServer # 服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nacos地址
+      getway:
+        routes: # 网关路由配置
+          - id: userServer # 路由id，唯一标识，每个路由都需要一个id
+            # uri: http://localhost:8001 # 路由目标地址，http://服务名
+            uri: lb://userServer # 路由目标地址，lb://服务名，lb代表负载均衡
+            predicates: # 路由断言，判断是否符合路由条件，断言为true时，才会路由
+              - Path=/user/** # 只有请求路径匹配/user/**时，才会路由
+            filters: # 路由过滤器，对请求进行过滤
+          - id: orderServer
+            # uri: http://localhost:8002
+            uri: lb://orderServer
+            predicates:
+              - Path=/order/**
+              #我们配置了路由规则以后，如果没有符合规则的请求，就会返回404，
+              #我们可以配置一个默认的路由规则，当没有符合规则的请求时，就会路由到默认的路由规则上
+            filters: # 过滤器会同时对请求和响应做处理
+              - AddRequestHeader=X-Request-junw,caishuhan # 给请求添加一个请求头
+              # 所有的过滤器，实际上都会被转换为getwayxxx，所以能进行同时使用
+              # 按照具体的顺序依次执行
+              # - StripPrefix=1 # 去掉请求路径的前缀，比如请求路径为/order/1，去掉前缀后，请求路径为/1
+              # - name: Hystrix # 熔断器，当请求超时或者异常时，会调用fallback方法
+              #   args:
+              #     name: fallback # fallback方法名
+              #     fallbackUri: forward:/fallback # fallback方法所在的controller
+        default-fallback: forward:/fallback # 默认的fallback方法，全局生效
+        # 当没有符合路由规则的请求时，会调用默认的fallback方法
+        # 所有的请求都会经过过滤器，过滤器可以对请求和响应做处理，比如添加请求头、去掉请求路径的前缀、熔断器等等。
+        # 同一个类型的过滤器，会按照配置的顺序依次执行。1-2-3这种
+        # 浏览器说的跨域问题，是浏览器的安全策略，不是后端的跨域问题
+        # 具体而言，是禁止了ajax跨域请求，所以我们需要在后端配置跨域
+        
