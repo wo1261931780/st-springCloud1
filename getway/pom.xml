@@ -9,7 +9,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>wo1261931780</groupId>
 	<artifactId>getway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>getway</name>
@@ -35,6 +34,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-getway</artifactId>
+			<version>2.3.9.RELEASE</version>
 		</dependency>
 	</dependencies>
 

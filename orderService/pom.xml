@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>wo1261931780</groupId>
+
 	<artifactId>orderService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>orderService</name>
@@ -76,7 +76,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>wo1261931780</groupId>
+
 			<artifactId>userService</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
