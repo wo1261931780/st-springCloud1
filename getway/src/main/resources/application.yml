@@ -6,7 +6,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 # nacos地址
+        #        server-addr: localhost:8848 # nacos地址
+        server-addr: nacos:8848 # docker中的nacos地址
       getway:
         routes: # 网关路由配置
           - id: userServer # 路由id，唯一标识，每个路由都需要一个id
