@@ -7,6 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="feignApi" />
+        <module name="getway" />
         <module name="eurekaServer" />
         <module name="userService" />
         <module name="orderService" />
@@ -26,8 +28,10 @@
       <module name="eureka-server" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
       <module name="feign-api" options="-parameters" />
+      <module name="feignApi" options="-parameters" />
       <module name="foreignApi" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="getway" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="orderService" options="-parameters" />
       <module name="st-springCloud" options="" />
