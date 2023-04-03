@@ -1,7 +1,3 @@
-import org.apache.catalina.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 // @FeignClient("userService")
 // public interface UserClient {
 //     // 里面封装的是所有对userService发起的远程调用

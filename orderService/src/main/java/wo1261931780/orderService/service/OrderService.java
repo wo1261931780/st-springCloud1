@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import wo1261931780.orderService.mapper.OrderMapper;
 import wo1261931780.orderService.pojo.Order;
-import wo1261931780.userService.pojo.User;
 
 @Service
 public class OrderService {
@@ -26,6 +25,9 @@ public class OrderService {
 	@Autowired
 	private RestTemplate restTemplate;
 	// 注入以后发送请求
+	@Autowired
+	private UserClient userClient;
+	// 对于上面的代码，存在着可读性差，url难以维护的问题
 
 	public Order queryById(Long orderId) {
 		Order orderMapperById = orderMapper.findById(orderId);
@@ -39,10 +41,6 @@ public class OrderService {
 		orderMapperById.setUser(forObject);
 		return orderMapperById;
 	}
-	// 对于上面的代码，存在着可读性差，url难以维护的问题
-
-	@Autowired
-	private UserClient userClient;
 
 	// 注入Feign的接口
 	public Order queryById2(Long userId) {

@@ -1,3 +1,8 @@
+package wo1261931780.feignApi.config;
+
+import feign.Logger;
+import org.springframework.context.annotation.Bean;
+
 /*
  * Author: junw 45444154+wo1261931780@users.noreply.github.com
  * Date: 2023-04-01 01:35:40
@@ -9,8 +14,8 @@
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
 public class DefaultFeignConfiguration2 {
-    @Bean
-public Logger.Level logLevel() {
-return Logger.Level.FULL;
-}
+	@Bean
+	public Logger.Level logLevel() {
+		return Logger.Level.FULL;
+	}
 }
