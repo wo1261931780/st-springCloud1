@@ -31,13 +31,13 @@
 			<version>2.2.5.RELEASE</version>
 		</dependency>
 		<!-- 网关的服务依赖 -->
-		<!--<dependency>-->
-		<!--	<groupId>org.springframework.boot</groupId>-->
-		<!--	<artifactId>spring-boot-starter-getway</artifactId>-->
-		<!--<version>2.2.10.RELEASE</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+			<version>4.0.7</version>
+		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<!--打包以后的最终名称-->
 		<!--根据docker中的镜像名称来命名-->

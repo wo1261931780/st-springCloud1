@@ -1,11 +1,20 @@
 package wo1261931780.getway.Filter;
 
 import com.alibaba.cloud.commons.lang.StringUtils;
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
 
-/*
+/**
+ * @author 64234
+ */ /*
  * Author: junw 45444154+wo1261931780@users.noreply.github.com
  * Date: 2023-04-01 16:02:28
  * LastEditors: junw 45444154+wo1261931780@users.noreply.github.com
@@ -17,7 +26,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Order(0)
-public interface AuthorizeFliter implements GlobalFilter, Ordered {
+public class AuthorizeFilter implements GlobalFilter, Ordered {
 // 这里的目的是实现一个全局过滤器，用来拦截所有的请求，
 // 判断是否有token，如果没有token，就拦截，如果有token，就放行。
 
