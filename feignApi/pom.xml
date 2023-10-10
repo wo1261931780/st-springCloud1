@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-
+	
 	<artifactId>feignApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>feignApi</name>
@@ -18,7 +18,7 @@
 		<java.version>8</java.version>
 	</properties>
 	<dependencies>
-
+		
 		<!--feign客户端依赖-->
 		<!-- feign内部已经继承了ribbon，不需要额外引入 -->
 		<dependency>
@@ -26,7 +26,7 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 			<version>2.2.10.RELEASE</version>
 		</dependency>
-		<!-- &lt;!&ndash;引入HttpClient依赖&ndash;&gt; -->
+		<!--引入HttpClient依赖-->
 		<!-- 因为feign不支持连接池，所以这里手动引入一个 -->
 		<dependency>
 			<groupId>io.github.openfeign</groupId>
@@ -34,7 +34,7 @@
 			<version>11.0</version>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>

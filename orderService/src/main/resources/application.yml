@@ -39,6 +39,10 @@ spring:
 userService:
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 负载均衡规则
+#    针对user服务的负载均衡规则
+#这里是使用nacos的情况下，nacos的规则
+#如果是原生的cloud，是netflex的规则
+#nacos的规则是，优先采用本地集群，然后在内部继续采用随机的方式
 #========================================================
 #下面是懒加载的配置过程
 ribbon:

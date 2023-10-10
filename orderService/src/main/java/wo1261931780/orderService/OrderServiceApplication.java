@@ -15,6 +15,8 @@ import com.netflix.loadbalancer.RandomRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -43,6 +45,7 @@ public class OrderServiceApplication {
 		// 这个就是模拟前端，发送http请求的工具类
 		// 使用这个工具类，来调用其他服务的接口
 		// LoadBalanced注解，表示启动负载均衡
+		// 通过这个发起的请求，要被ribbon拦截和处理
 		return new RestTemplate();
 	}
 
@@ -50,6 +53,7 @@ public class OrderServiceApplication {
 	public IRule iRules() {
 		// 这个是自定义的负载均衡算法
 		// 这个算法是随机的
+		// 针对的是orderService中的所有服务
 		return new RandomRule();
 	}
 

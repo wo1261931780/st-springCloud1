@@ -34,7 +34,7 @@ public class OrderService {
 		Order orderMapperById = orderMapper.findById(orderId);
 		// String getUrl = "http://localhost:8081/user/" + orderMapperById.getUserId();
 		// 上面还是硬编码
-		// 我们建议使用的是配置文件中的服务名
+		// 我们建议使用的是eureka注册中心里面展示的服务名
 		String getUrl = "http://orderServer/user/" + orderMapperById.getUserId();
 		User forObject = restTemplate.getForObject(getUrl, User.class);
 		// 如果不指定对象的类型，name默认得到的是一个json字符串

@@ -10,6 +10,7 @@
  */
 package wo1261931780.userService.web;
 
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
