@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>wo1261931780</groupId>
-		<artifactId>st-springCloud0</artifactId>
+		<artifactId>st-springCloud1</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>userService</artifactId>
