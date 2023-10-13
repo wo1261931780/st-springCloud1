@@ -4,7 +4,7 @@ spring:
   application:
     name: userService # 服务名称，在euraka和nacos中展示
   datasource: #因为父项目中已经配置了mybatis，这里不配置就会报错
-    url: jdbc:mysql://localhost:3306/spring001?useSSL=false
+    url: jdbc:mysql://mysql:3306/spring001?useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -13,14 +13,16 @@ spring:
       strict: false
       datasource:
         ds0:
-          url: jdbc:mysql://localhost:3306/spring001?useSSL=false
+          url: jdbc:mysql://mysql:3306/spring001?useSSL=false
           username: root
           password: root
           driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 # nacos服务地址
+        server-addr: nacos:8848 # nacos服务地址
+        # 因为这里开始使用dockerCompos集群来完成部署，
+        # 所有的服务都在同一个网络中，所以这里的地址可以直接使用服务名
         cluster-name: SH # 集群名称
 mybatis-plus: # mybatis-plus配置
   configuration:

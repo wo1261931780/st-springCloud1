@@ -8,7 +8,7 @@ spring:
     nacos:
       discovery:
         # server-addr: localhost:8848 # nacos地址
-        server-addr: localhost:8848 # docker中的nacos地址
+        server-addr: nacos:8848 # docker中的nacos地址
     gateway:
       routes: # 网关路由配置
         - id: userServer # 路由id，唯一标识，每个路由都需要一个id
@@ -46,8 +46,8 @@ spring:
         cors-configurations:
           "[/**]": # 配置所有请求
             allowedOrigins: # 允许跨域的域名，*代表所有域名
-              - "http://localhost:8010"
-              - "http://localhost:8011"
+              - "http://userServer:8010"
+              - "http://orderServer:8011"
             allowedMethods: # 允许跨域的请求方法，*代表所有请求方法
               - "*"
             allowedHeaders: # 允许跨域的请求头，*代表所有请求头

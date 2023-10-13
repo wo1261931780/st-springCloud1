@@ -4,7 +4,7 @@ spring:
   application:
     name: orderService
   datasource: #因为父项目中已经配置了mybatis，这里不配置就会报错
-    url: jdbc:mysql://localhost:3306/spring001?useSSL=false
+    url: jdbc:mysql://mysql:3306/spring001?useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -13,14 +13,14 @@ spring:
       strict: false
       datasource:
         ds0:
-          url: jdbc:mysql://localhost:3306/spring001?useSSL=false
+          url: jdbc:mysql://mysql:3306/spring001?useSSL=false
           username: root
           password: root
           driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 # 一样的，docker会自动解析
+        server-addr: nacos:8848 # 一样的，docker会自动解析
         cluster-name: SH # 集群名称
         #      discovery:
         #        namespace: 4d6ce343-9e1b-44df-a90f-2cf2b6b3d177 # dev环境

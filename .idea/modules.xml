@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eurekaServer/eurekaServer.iml" filepath="$PROJECT_DIR$/eurekaServer/eurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feignApi/feignApi.iml" filepath="$PROJECT_DIR$/feignApi/feignApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gatewayServer/gatewayServer.iml" filepath="$PROJECT_DIR$/gatewayServer/gatewayServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orderService/orderService.iml" filepath="$PROJECT_DIR$/orderService/orderService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userService/userService.iml" filepath="$PROJECT_DIR$/userService/userService.iml" />
+    </modules>
+  </component>
+</project>
