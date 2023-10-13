@@ -1,0 +1,18 @@
+server:
+  port: 10086 # 服务端口
+spring:
+  application:
+    name: eurekaServer # eureka的服务名称
+  datasource: # 因为父项目中已经配置了mybatis，这里不配置就会报错
+    url: jdbc:mysql://localhost:3306/spring001?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  client:
+    service-url: # eureka的地址信息
+      defaultZone: http://localhost:10086/eureka
+# 因为eureka本身也是一个微服务
+# 所以需要将其同时注册
+# 如果以后eureka出现了集群，那么后面也需要这个东西来完成区分
+# 以上的内容，全部都是为了进行服务的注册

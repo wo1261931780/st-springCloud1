@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 一样的，docker会自动解析
+      config:
+        file-extension: yaml # 指定配置文件的格式
+  profiles:
+    default: dev
+  application:
+    name: orderService

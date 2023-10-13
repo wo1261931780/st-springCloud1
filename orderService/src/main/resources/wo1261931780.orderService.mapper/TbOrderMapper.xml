@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.orderService.mapper.TbOrderMapper">
+	<resultMap id="BaseResultMap" type="wo1261931780.orderService.pojo.TbOrder">
+		<!--@mbg.generated-->
+		<!--@Table tb_order-->
+		<id column="id" jdbcType="BIGINT" property="id"/>
+		<result column="user_id" jdbcType="BIGINT" property="userId"/>
+		<result column="name" jdbcType="VARCHAR" property="name"/>
+		<result column="price" jdbcType="BIGINT" property="price"/>
+		<result column="num" jdbcType="INTEGER" property="num"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+		<!--@mbg.generated-->
+		id, user_id, `name`, price, num
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		<!--@mbg.generated-->
+		select
+		<include refid="Base_Column_List"/>
+		from tb_order
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		<!--@mbg.generated-->
+		delete from tb_order
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" keyColumn="id" keyProperty="id" parameterType="wo1261931780.orderService.pojo.TbOrder"
+	        useGeneratedKeys="true">
+		<!--@mbg.generated-->
+		insert into tb_order (user_id, `name`, price,
+		num)
+		values (#{userId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=BIGINT},
+		#{num,jdbcType=INTEGER})
+	</insert>
+	<insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="wo1261931780.orderService.pojo.TbOrder"
+	        useGeneratedKeys="true">
+		<!--@mbg.generated-->
+		insert into tb_order
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="name != null">
+				`name`,
+			</if>
+			<if test="price != null">
+				price,
+			</if>
+			<if test="num != null">
+				num,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				#{userId,jdbcType=BIGINT},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="price != null">
+				#{price,jdbcType=BIGINT},
+			</if>
+			<if test="num != null">
+				#{num,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="wo1261931780.orderService.pojo.TbOrder">
+		<!--@mbg.generated-->
+		update tb_order
+		<set>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=BIGINT},
+			</if>
+			<if test="name != null">
+				`name` = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="price != null">
+				price = #{price,jdbcType=BIGINT},
+			</if>
+			<if test="num != null">
+				num = #{num,jdbcType=INTEGER},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="wo1261931780.orderService.pojo.TbOrder">
+		<!--@mbg.generated-->
+		update tb_order
+		set user_id = #{userId,jdbcType=BIGINT},
+		`name` = #{name,jdbcType=VARCHAR},
+		price = #{price,jdbcType=BIGINT},
+		num = #{num,jdbcType=INTEGER}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateBatch" parameterType="java.util.List">
+		<!--@mbg.generated-->
+		update tb_order
+		<trim prefix="set" suffixOverrides=",">
+			<trim prefix="user_id = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=BIGINT}
+				</foreach>
+			</trim>
+			<trim prefix="`name` = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+				</foreach>
+			</trim>
+			<trim prefix="price = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					when id = #{item.id,jdbcType=BIGINT} then #{item.price,jdbcType=BIGINT}
+				</foreach>
+			</trim>
+			<trim prefix="num = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					when id = #{item.id,jdbcType=BIGINT} then #{item.num,jdbcType=INTEGER}
+				</foreach>
+			</trim>
+		</trim>
+		where id in
+		<foreach close=")" collection="list" item="item" open="(" separator=", ">
+			#{item.id,jdbcType=BIGINT}
+		</foreach>
+	</update>
+	<update id="updateBatchSelective" parameterType="java.util.List">
+		<!--@mbg.generated-->
+		update tb_order
+		<trim prefix="set" suffixOverrides=",">
+			<trim prefix="user_id = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					<if test="item.userId != null">
+						when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=BIGINT}
+					</if>
+				</foreach>
+			</trim>
+			<trim prefix="`name` = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					<if test="item.name != null">
+						when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+					</if>
+				</foreach>
+			</trim>
+			<trim prefix="price = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					<if test="item.price != null">
+						when id = #{item.id,jdbcType=BIGINT} then #{item.price,jdbcType=BIGINT}
+					</if>
+				</foreach>
+			</trim>
+			<trim prefix="num = case" suffix="end,">
+				<foreach collection="list" index="index" item="item">
+					<if test="item.num != null">
+						when id = #{item.id,jdbcType=BIGINT} then #{item.num,jdbcType=INTEGER}
+					</if>
+				</foreach>
+			</trim>
+		</trim>
+		where id in
+		<foreach close=")" collection="list" item="item" open="(" separator=", ">
+			#{item.id,jdbcType=BIGINT}
+		</foreach>
+	</update>
+	<insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+		<!--@mbg.generated-->
+		insert into tb_order
+		(user_id, `name`, price, num)
+		values
+		<foreach collection="list" item="item" separator=",">
+			(#{item.userId,jdbcType=BIGINT}, #{item.name,jdbcType=VARCHAR}, #{item.price,jdbcType=BIGINT},
+			#{item.num,jdbcType=INTEGER})
+		</foreach>
+	</insert>
+	<insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="wo1261931780.orderService.pojo.TbOrder"
+	        useGeneratedKeys="true">
+		<!--@mbg.generated-->
+		insert into tb_order
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			user_id,
+			`name`,
+			price,
+			num,
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			#{userId,jdbcType=BIGINT},
+			#{name,jdbcType=VARCHAR},
+			#{price,jdbcType=BIGINT},
+			#{num,jdbcType=INTEGER},
+		</trim>
+		on duplicate key update
+		<trim suffixOverrides=",">
+			<if test="id != null">
+				id = #{id,jdbcType=BIGINT},
+			</if>
+			user_id = #{userId,jdbcType=BIGINT},
+			`name` = #{name,jdbcType=VARCHAR},
+			price = #{price,jdbcType=BIGINT},
+			num = #{num,jdbcType=INTEGER},
+		</trim>
+	</insert>
+	<insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
+	        parameterType="wo1261931780.orderService.pojo.TbOrder" useGeneratedKeys="true">
+		<!--@mbg.generated-->
+		insert into tb_order
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="name != null">
+				`name`,
+			</if>
+			<if test="price != null">
+				price,
+			</if>
+			<if test="num != null">
+				num,
+			</if>
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="userId != null">
+				#{userId,jdbcType=BIGINT},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="price != null">
+				#{price,jdbcType=BIGINT},
+			</if>
+			<if test="num != null">
+				#{num,jdbcType=INTEGER},
+			</if>
+		</trim>
+		on duplicate key update
+		<trim suffixOverrides=",">
+			<if test="id != null">
+				id = #{id,jdbcType=BIGINT},
+			</if>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=BIGINT},
+			</if>
+			<if test="name != null">
+				`name` = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="price != null">
+				price = #{price,jdbcType=BIGINT},
+			</if>
+			<if test="num != null">
+				num = #{num,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+</mapper>
