@@ -18,6 +18,11 @@ class PublisherServerApplicationTests {
 	// void contextLoads() {
 	// }
 
+	/**
+	 * 测试发送消息
+	 * @throws IOException 异常
+	 * @throws TimeoutException 异常
+	 */
 	@Test
 	public void testSendMessages() throws IOException, TimeoutException {
 		ConnectionFactory connectionFactory = new ConnectionFactory(); // 创建连接工厂

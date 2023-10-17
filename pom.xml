@@ -47,6 +47,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<version>3.0.2</version>
 		</dependency>
+		<!--json的序列化依赖-->
+		<!--相当于，使用这个依赖覆盖默认的jdk序列化方式-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
