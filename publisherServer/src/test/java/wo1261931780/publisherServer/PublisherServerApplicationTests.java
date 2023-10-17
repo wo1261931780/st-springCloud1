@@ -3,6 +3,7 @@ package wo1261931780.publisherServer;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 @SpringBootTest
+@Slf4j
 class PublisherServerApplicationTests {
 
 	// @Test
@@ -31,7 +33,7 @@ class PublisherServerApplicationTests {
 		channel.queueDeclare(queueName, true, false, false, null); // 声明队列
 		String message = "junw555";
 		channel.basicPublish("", queueName, null, message.getBytes()); // 发送消息
-		System.out.println("消息发送成功：" + message);
+		log.info("消息发送成功：" + message);
 		// String exchangeName = "test_fanout_exchange"; // 交换机名称
 		// String routingKey = "test.fanout"; // 路由键
 		channel.close(); // 关闭通道

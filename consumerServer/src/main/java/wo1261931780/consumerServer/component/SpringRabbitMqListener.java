@@ -1,5 +1,6 @@
 package wo1261931780.consumerServer.component;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -19,12 +20,13 @@ import java.time.LocalDateTime;
  * @Description
  */
 @Component
+@Slf4j
 public class SpringRabbitMqListener {
 	// 下面是基本队列的监听：
 	// @RabbitListener(queues = "test001.queue")
 	// // 队列可以指定多个，这里只指定了一个
 	// public void receiveMessage(Object message) {
-	// 	System.out.println("接收到消息：" + message);
+	// 	log.info("接收到消息：" + message);
 	// }
 	// 下面是工作队列的监听：
 
@@ -36,7 +38,7 @@ public class SpringRabbitMqListener {
 	 */
 	@RabbitListener(queues = "test001.queue")
 	public void receiveWorkQueueMessage1(Object message) throws InterruptedException {
-		System.out.println("消费者1-接收到消息：" + message + LocalDateTime.now());
+		log.info("消费者1-接收到消息：" + message + LocalDateTime.now());
 		Thread.sleep(20);
 	}
 
@@ -48,7 +50,7 @@ public class SpringRabbitMqListener {
 	 */
 	@RabbitListener(queues = "test001.queue")
 	public void receiveWorkQueueMessage2(Object message) throws InterruptedException {
-		System.out.println("消费者2-接收到消息：" + message + LocalDateTime.now());
+		log.info("消费者2-接收到消息：" + message + LocalDateTime.now());
 		Thread.sleep(200);
 	}
 
@@ -60,7 +62,7 @@ public class SpringRabbitMqListener {
 	 */
 	@RabbitListener(queues = "fanout-test001.queue1")
 	public void receiveFanout1Message(Object message) throws InterruptedException {
-		System.out.println("fanout-test001-queue1-接收到消息：" + message + LocalDateTime.now());
+		log.info("fanout-test001-queue1-接收到消息：" + message + LocalDateTime.now());
 		Thread.sleep(200);
 	}
 
@@ -74,7 +76,7 @@ public class SpringRabbitMqListener {
 	 */
 	@RabbitListener(queues = "fanout-test001.queue2")
 	public void receiveFanout2Message(Object message) throws InterruptedException {
-		System.out.println("fanout-test001-queue2-接收到消息：" + message + LocalDateTime.now());
+		log.info("fanout-test001-queue2-接收到消息：" + message + LocalDateTime.now());
 		Thread.sleep(200);
 	}
 
@@ -82,7 +84,7 @@ public class SpringRabbitMqListener {
 	// 我们可以使用注解的方式来简化，如下：
 	// @RabbitListener(queuesToDeclare = @Queue("test001"))
 	// public void receiveMessage(Object message) {
-	// 	System.out.println("接收到消息：" + message);
+	// 	log.info("接收到消息：" + message);
 	// }
 	// 上面的代码中，我们使用了queuesToDeclare属性，
 	// 这个属性是用来声明队列的，如果队列不存在则会自动创建。
@@ -99,7 +101,7 @@ public class SpringRabbitMqListener {
 	// 		autoDelete = "false"
 	// ))
 	// public void receiveMessage(Object message) {
-	// 	System.out.println("接收到消息：" + message);
+	// 	log.info("接收到消息：" + message);
 	// }
 	// 还有一种修改exchange类型的声明方法：
 
@@ -114,7 +116,7 @@ public class SpringRabbitMqListener {
 			key = {"red", "blue"} // 指定路由key
 	))
 	public void listenDirectQueue1(String message) {
-		System.out.println("消费者1-接收到消息：" + message + LocalDateTime.now());
+		log.info("消费者1-接收到消息：" + message + LocalDateTime.now());
 	}
 
 	@RabbitListener(bindings = @QueueBinding( // 绑定队列
@@ -123,7 +125,7 @@ public class SpringRabbitMqListener {
 			key = {"red", "yellow"} // 指定路由key
 	))
 	public void listenDirectQueue2(String message) {
-		System.out.println("消费者2-接收到消息：" + message + LocalDateTime.now());
+		log.info("消费者2-接收到消息：" + message + LocalDateTime.now());
 	}
 
 
