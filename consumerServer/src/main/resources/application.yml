@@ -1,0 +1,19 @@
+spring:
+  rabbitmq:
+    username: root
+    password: root
+    host: localhost
+    port: 5672
+    virtual-host: /
+#    listener:
+#      simple:
+#        concurrency: 5
+#        max-concurrency: 10
+#        prefetch: 5
+#        acknowledge-mode: manual
+#        retry:
+#          enabled: true
+#          initial-interval: 1000
+#          max-attempts: 3
+#          multiplier: 1.0
+#          max-interval: 10000

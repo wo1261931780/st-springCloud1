@@ -6,20 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="feignApi" />
-        <module name="gatewayServer" />
-        <module name="eurekaServer" />
-        <module name="orderService" />
-        <module name="userService" />
+        <module name="publisherServer" />
+        <module name="consumerServer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eurekaServer" target="17" />
+      <module name="feignApi" target="17" />
+      <module name="gatewayServer" target="17" />
+      <module name="orderService" target="17" />
+      <module name="userService" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="consumerServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
       <module name="feignApi" options="-parameters" />
       <module name="gatewayServer" options="-parameters" />
       <module name="orderService" options="-parameters" />
+      <module name="publisherServer" options="-parameters" />
       <module name="userService" options="-parameters" />
     </option>
   </component>
