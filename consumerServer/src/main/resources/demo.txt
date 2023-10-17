@@ -1,0 +1,12 @@
+#    listener:
+#      direct:
+#        prefetch: 1
+        # 每次从队列中获取的消息数量，如果有多个消费者同时监听一个队列，会平均分配
+#        消费预取，每次取5条，处理完了再执行后面的
+#        acknowledge-mode: manual
+#        retry:
+#          enabled: true
+#          initial-interval: 1000
+#          max-attempts: 3
+#          multiplier: 1.0
+#          max-interval: 10000
